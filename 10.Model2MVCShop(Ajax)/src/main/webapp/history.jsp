@@ -1,17 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <%@ page contentType="text/html; charset=EUC-KR" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 <head>
-
+<meta charset="EUC-KR">
 <title>열어본 상품 보기</title>
+<!-- CDN(Content Delivery Network) 호스트 사용 -->
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	
+}
+</script>
+
 
 </head>
 <body>
 	당신이 열어본 상품을 알고 있다
 <br>
 <br>
+
 <%
 	request.setCharacterEncoding("euc-kr");
 	response.setCharacterEncoding("euc-kr");
@@ -29,7 +38,7 @@
 			for (int i = 0; i < h.length; i++) {
 				if (!h[i].equals("null")) {
 %>
-<a href="/getProduct.do?prodNo=<%=h[i]%>&menu=search"
+<a href="/product/getProduct?prodNo=<%=h[i]%>&menu=search"
 	target="rightFrame"><%=h[i]%></a>
 <br>
 <%
